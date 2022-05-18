@@ -16,7 +16,7 @@ class Board:
         # let's create the board
         # helper funcition
         self.board = self.make_new_board()
-        self.assing_values_to_board()
+        self.assign_values_to_board()
 
         # initialize a set to keep track of wich location we've uncovered
         # we'll save (row, col) tumple into this set
@@ -65,6 +65,7 @@ class Board:
                     continue
                 self.board[r][c] = self.get_num_neighboring_bombs(r, c)
 
+
     def get_num_neighboring_bombs(self, row, col):
         # let's interate through each of the neighboring position and sum number of bombs
         # top left: (row-1, col-1)
@@ -80,12 +81,16 @@ class Board:
 
         num_neighboring_bombs = 0
         for r in range(max(0, row-1), min(self.dim_size - 1, row+1)+1):
-            for c in range(max (0, col-1),min(self.dim_size - 1, col+1)+1):
+            for c in range(max (0, col-1), min(self.dim_size - 1, col+1)+1):
                 if r == row and c == col:
                     #out original location, don't check
                     continue
                 if self.board[r][c] == '*':
                     num_neighboring_bombs += 1
+
+
+        return num_neighboring_bombs
+
 
     def dig(self, row, col):
         # dig at that location
@@ -187,7 +192,7 @@ def play(dim_size = 10, num_bombs = 10):
         # 0,0 or 0, 0 or 0,   0
         user_input = re.split(', (\\s)*', input("where would you like to dig? Input as row, col"))
         row, col = int(user_input[0]), int(user_input[-1])
-        if row < 0 or row >= board.dim_size or col < 0 or col >= dim_size
+        if row < 0 or row >= board.dim_size or col < 0 or col >= dim_size:
             print("Invalid location. Try again.")
             continue
 
@@ -206,4 +211,12 @@ def play(dim_size = 10, num_bombs = 10):
     else:
 
         print("SORRY GAME OVER :(")
-        
+        # let's reveal the whole board!
+
+        board.dug = [(r,c) for r in range(board.dim_size) for c in range(board.dim_size)]
+        print(board)
+
+
+if __name__ == '__main__':
+    #good practice :)
+    play()
