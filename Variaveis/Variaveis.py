@@ -1,0 +1,7 @@
+nome = input('Digite um nome: ')
+empresa = input('Diga a sua empresa: ')
+qtde_funcionarios = int(input('Quantos funcionarios trabalham na ' + empresa + '? '))
+mediaSalario = float(input('Qual a média salaria: '))
+print(nome + " trabalha na empresa " + empresa)
+print("Possui: ", qtde_funcionarios, " funcionarios.")
+print("A média do salario é de: " + str(mediaSalario))
