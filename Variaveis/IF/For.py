@@ -7,3 +7,13 @@ print("Tabuada do numero ", tabuada)
 
 for valor in range(1, 11, 1):
     print(str(tabuada) + " x " + str(valor) + " = " + str((tabuada * valor)))
+
+num = 8
+i = 0
+somaTotal = 0
+while i <= num:
+    somaTotal = somaTotal + i
+    i = i + 1
+
+print("aaaaa: " ,somaTotal)
+print("Soma total 2 = ", sum(range(num + 1)))

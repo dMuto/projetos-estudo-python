@@ -19,32 +19,32 @@ for elemento in inventario:
     print("Departamento.:", elemento[3])
 
 busca = input("\nDigite o nome do equipamento que deseja buscar: ")
-for elemento in inventario:
+for elemento1 in inventario:
     if busca == elemento[0]:
-        print("Valor..: ", elemento[1])
-        print("Serial.:", elemento[2])
+        print("Valor..: ", elemento1[1])
+        print("Serial.: ", elemento1[2])
 
 depreciacao = input("\nDigite o nome do equipamento que sera depreciado: ")
-for elemento in inventario:
-    if depreciacao == elemento[0]:
-        print("Valor antigo: ", elemento[1])
-        elemento[1] = elemento[1] * 0.9
-        print("Novo valor: ", elemento[1])
+for elemento2 in inventario:
+    if depreciacao == elemento2[0]:
+        print("Valor antigo: ", elemento2[1])
+        elemento2[1] = elemento2[1] * 0.9
+        print("Novo valor: ", elemento2[1])
 
 serial = int(input("\nDigite o serial de equipamento que seta excluido: "))
-for elemento in inventario:
-    if elemento[2] == serial:
-        inventario.remove(elemento)
+for elemento3 in inventario:
+    if elemento3[2] == serial:
+        inventario.remove(elemento3)
 
-for elemento in inventario:
-    print("Nome.........: ", elemento[0])
-    print("Valor........: ", elemento[1])
-    print("Serial.......: ", elemento[2])
-    print("Departamento.: ", elemento[3])
+for elemento4 in inventario:
+    print("Nome.........: ", elemento4[0])
+    print("Valor........: ", elemento4[1])
+    print("Serial.......: ", elemento4[2])
+    print("Departamento.: ", elemento4[3])
 
 valores = []
-for elemento in inventario:
-    valores.append(elemento[1])
+for elemento5 in inventario:
+    valores.append(elemento5[1])
 
 if len(valores) > 0:
     print("O equipamento mais caro custa: ", max(valores))
