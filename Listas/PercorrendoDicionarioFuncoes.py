@@ -21,4 +21,6 @@ def excluir(dicionario, chave):
     dicionario.pop(chave)
 
 def listar(dicionario):
-    return print(dicionario)
+
+    for x in dicionario:
+        return print(dicionario[x])
